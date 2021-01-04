@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">Shop</string>
+
+    <string name="hint_donationTitle">Donation Title</string>
+    <string name="hint_donationDescription">Description </string>
+    <string name="button_addDonation">Add Donation</string>
+    <string name="menu_addDonation">Add</string>
+    <string name="menu_cancelDonation">Cancel</string>
+    <string name="enter_donation_title"> Please enter a Donation Title </string>
+    <string name="save_donation"> Save Donation </string>
+    <string name="google_maps_key">INSERT KEY HERE</string>
+    <string name="menu_deleteDonation">Delete</string>
+    <string name="title_activity_donation_maps">Map of All Donation </string>
+    <string name="donation_title_placeholder">Donation Title</string>
+    <string name="donation_description_placeholder">Donation Description</string>
+
+
 </resources>
