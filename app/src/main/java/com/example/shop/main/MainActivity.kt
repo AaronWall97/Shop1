@@ -7,13 +7,13 @@ import com.example.shop.models.DonationJSONStore
 import com.example.shop.models.Store
 import com.example.shop.models.DonationStore
 
-class MainApp : Application(), AnkoLogger {
+class MainActivity : Application(), AnkoLogger {
 
-    lateinit var donation: Store
+    lateinit var donations: Store
 
     override fun onCreate() {
         super.onCreate()
-        donation = DonationJSONStore(applicationContext)
+        donations = DonationJSONStore(applicationContext)
         info("Donation created")
     }
 }

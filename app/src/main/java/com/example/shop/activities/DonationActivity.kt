@@ -11,13 +11,13 @@ import org.jetbrains.anko.info
 import org.jetbrains.anko.intentFor
 import org.jetbrains.anko.toast
 import com.example.shop.R
-import com.example.shop.main.MainApp
+import com.example.shop.main.MainActivity
 import com.example.shop.models.DonationModel
 
 class DonationActivity : AppCompatActivity(), AnkoLogger {
 
     var donation = DonationModel()
-    lateinit var app: MainApp
+    lateinit var app: MainActivity
     var edit = false;
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,7 +27,7 @@ class DonationActivity : AppCompatActivity(), AnkoLogger {
         setSupportActionBar(toolbarAdd)
         info("Donation Activity started..")
 
-        app = application as MainApp
+        app = application as MainActivity
 
         if (intent.hasExtra("Donation_edit")) {
             edit = true
@@ -44,10 +44,10 @@ class DonationActivity : AppCompatActivity(), AnkoLogger {
                 toast(R.string.enter_donation_title)
             } else {
                 if (edit) {
-                    app.donation.update(donation.copy())
+                    app.donations.update(donation.copy())
                 } else {
 
-                    app.donation.create(donation.copy())
+                    app.donations.create(donation.copy())
                 }
             }
             info("add Button Pressed: $donationTitle")
@@ -56,13 +56,14 @@ class DonationActivity : AppCompatActivity(), AnkoLogger {
         }
 
 
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+    fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_donation, menu)
         if (edit && menu != null) menu.getItem(0).setVisible(true)
         return super.onCreateOptionsMenu(menu)
     }
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+
+        fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.item_delete -> {
                 app.donations.delete(donation)
@@ -75,7 +76,7 @@ class DonationActivity : AppCompatActivity(), AnkoLogger {
         return super.onOptionsItemSelected(item)
     }
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+     fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         when (requestCode) {
 

@@ -8,6 +8,7 @@ import android.os.Handler
 import android.view.WindowInsets
 import android.view.WindowManager
 import com.example.shop.R
+import com.example.shop.main.MainActivity
 
 class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,24 +20,20 @@ class SplashActivity : AppCompatActivity() {
             window.insetsController?.hide(WindowInsets.Type.statusBars())
         } else {
             window.setFlags(
-                WindowManager.LayoutParams.FLAG_FULLSCREEN,
-                WindowManager.LayoutParams.FLAG_FULLSCREEN
+                    WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                    WindowManager.LayoutParams.FLAG_FULLSCREEN
 
             )
         }
 
         @Suppress("DEPRECATION")
         Handler().postDelayed(
-            {
-                startActivity(Intent(this@SplashActivity, MainActivity::class.java))
-                finish()
+                {
+                    startActivity(Intent(this@SplashActivity, MainActivity::class.java))
+                    finish()
 
-            },2500
+                }, 2500
 
         )
-
-
-
-
     }
 }
