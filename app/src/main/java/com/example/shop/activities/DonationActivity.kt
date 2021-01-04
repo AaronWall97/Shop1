@@ -14,6 +14,7 @@ import com.example.shop.R
 import com.example.shop.main.MainActivity
 import com.example.shop.models.DonationModel
 
+
 class DonationActivity : AppCompatActivity(), AnkoLogger {
 
     var donation = DonationModel()
